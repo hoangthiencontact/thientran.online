@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang CV Lập trình viên</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #f8fafc;
+      --accent: #38bdf8;
+      --accent-soft: #7dd3fc;
+      --border: rgba(148, 163, 184, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 30%),
+                  linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: rgba(248, 250, 252, 0.75);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr);
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      margin-bottom: 1rem;
+      line-height: 1.05;
+    }
+
+    .hero-text p {
+      color: #cbd5e1;
+      max-width: 40rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .button {
+      background: var(--accent);
+      color: #0f172a;
+      text-decoration: none;
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .button:hover,
+    .button-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(15, 23, 42, 0.8);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
+    }
+
+    .hero-card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .hero-card p {
+      color: #cbd5e1;
+      margin-bottom: 1.25rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stat {
+      background: rgba(148, 163, 184, 0.08);
+      padding: 1rem 1.15rem;
+      border-radius: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .section {
+      margin-top: 3rem;
+    }
+
+    .section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .cards {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.5rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 0.97rem;
+      line-height: 1.65;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .tech {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-soft);
+      border-radius: 999px;
+      padding: 0.55rem 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 780px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Lập trình viên</div>
+      <nav>
+        <a href="#about">Giới thiệu</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p>Xin chào, tôi là</p>
+        <h1>Thien Tran</h1>
+        <p>Tôi là một lập trình viên đam mê xây dựng sản phẩm web hiện đại, trải nghiệm người dùng mượt mà và giải pháp hiệu quả. Tôi thích học hỏi công nghệ mới và phối hợp cùng đội nhóm để hoàn thiện sản phẩm có giá trị.</p>
+        <div class="buttons">
+          <a class="button" href="#contact">Gặp tôi</a>
+          <a class="button-secondary" href="#projects">Xem dự án</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h2>Thông tin nhanh</h2>
+        <p><strong>Vị trí:</strong> Fullstack Developer</p>
+        <p><strong>Chuyên môn:</strong> Web app, React/Vue, Node.js, API, UI/UX</p>
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>5+</strong>
+            Năm kinh nghiệm
+          </div>
+          <div class="stat">
+            <strong>15+</strong>
+            Dự án hoàn thành
+          </div>
+          <div class="stat">
+            <strong>10+</strong>
+            Công nghệ thành thạo
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            Tập trung vào chất lượng
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>Giới thiệu</h2>
+      <div class="card">
+        <p>Tôi là một lập trình viên web với nền tảng vững chắc về frontend và backend. Tôi thích giải quyết các bài toán phát triển phần mềm bằng cách tạo ra các giao diện trực quan, tối ưu hiệu năng và đảm bảo mã nguồn dễ bảo trì. Tôi luôn tìm kiếm cơ hội để học hỏi, cải tiến và đóng góp vào các sản phẩm mang lại trải nghiệm tốt cho người dùng.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Kỹ năng chính</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Frontend</h3>
+          <p>Thiết kế giao diện responsive, xây dựng ứng dụng với React, Vue, hoặc HTML/CSS/JavaScript thuần.</p>
+          <div class="tech-list">
+            <span class="tech">React</span>
+            <span class="tech">Vue</span>
+            <span class="tech">HTML</span>
+            <span class="tech">CSS</span>
+            <span class="tech">Tailwind</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Backend</h3>
+          <p>Phát triển API, xử lý dữ liệu, và triển khai dịch vụ với Node.js, Express và cơ sở dữ liệu.</p>
+          <div class="tech-list">
+            <span class="tech">Node.js</span>
+            <span class="tech">Express</span>
+            <span class="tech">MongoDB</span>
+            <span class="tech">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Công cụ</h3>
+          <p>Quản lý mã nguồn, tự động hóa công việc, và triển khai ứng dụng theo quy trình chuyên nghiệp.</p>
+          <div class="tech-list">
+            <span class="tech">Git</span>
+            <span class="tech">Docker</span>
+            <span class="tech">CI/CD</span>
+            <span class="tech">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Dự án tiêu biểu</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Website doanh nghiệp</h3>
+          <p>Xây dựng trang web giới thiệu công ty với thiết kế hiện đại, tối ưu chuyển đổi và tương thích đa thiết bị.</p>
+        </div>
+
+        <div class="card">
+          <h3>Ứng dụng quản lý</h3>
+          <p>Phát triển hệ thống quản lý nội bộ với chức năng báo cáo, người dùng và phân quyền linh hoạt.</p>
+        </div>
+
+        <div class="card">
+          <h3>API dịch vụ</h3>
+          <p>Thiết kế và triển khai API RESTful cho ứng dụng di động, đảm bảo bảo mật và hiệu năng cao.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Liên hệ</h2>
+      <div class="card">
+        <p>Nếu bạn cần một lập trình viên tận tâm, có tư duy giải quyết vấn đề và muốn tạo ra sản phẩm chất lượng, hãy liên hệ với tôi.</p>
+        <p>Email: <a href="mailto:hello@example.com" style="color: var(--accent); text-decoration: none;">hello@example.com</a></p>
+        <p>Số điện thoại: <span style="color: var(--text);">+84 123 456 789</span></p>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 Thien Tran. Tất cả quyền được bảo lưu.
+    </footer>
+  </div>
+</body>
+</html>
