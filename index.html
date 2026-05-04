@@ -3,223 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trang CV Lập trình viên</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --surface: #1e293b;
-      --text: #f8fafc;
-      --accent: #38bdf8;
-      --accent-soft: #7dd3fc;
-      --border: rgba(148, 163, 184, 0.3);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 30%),
-                  linear-gradient(180deg, #020617 0%, #0f172a 100%);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 2rem 0 4rem;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .logo {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    nav a {
-      color: rgba(248, 250, 252, 0.75);
-      text-decoration: none;
-      margin-left: 1.5rem;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: var(--text);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr);
-      gap: 2rem;
-      align-items: center;
-      margin-bottom: 3rem;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(2.4rem, 4vw, 4rem);
-      margin-bottom: 1rem;
-      line-height: 1.05;
-    }
-
-    .hero-text p {
-      color: #cbd5e1;
-      max-width: 40rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-text .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .button,
-    .button-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.95rem 1.4rem;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-
-    .button {
-      background: var(--accent);
-      color: #0f172a;
-      text-decoration: none;
-    }
-
-    .button-secondary {
-      border: 1px solid var(--border);
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .button:hover,
-    .button-secondary:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-card {
-      padding: 2rem;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: rgba(15, 23, 42, 0.8);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
-    }
-
-    .hero-card h2 {
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
-
-    .hero-card p {
-      color: #cbd5e1;
-      margin-bottom: 1.25rem;
-    }
-
-    .stat-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .stat {
-      background: rgba(148, 163, 184, 0.08);
-      padding: 1rem 1.15rem;
-      border-radius: 16px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.4rem;
-      margin-bottom: 0.35rem;
-      color: var(--text);
-    }
-
-    .section {
-      margin-top: 3rem;
-    }
-
-    .section h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .cards {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-
-    .card {
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 1.5rem;
-    }
-
-    .card h3 {
-      margin-bottom: 0.75rem;
-      font-size: 1.15rem;
-    }
-
-    .card p {
-      color: #cbd5e1;
-      font-size: 0.97rem;
-      line-height: 1.65;
-    }
-
-    .tech-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .tech {
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--accent-soft);
-      border-radius: 999px;
-      padding: 0.55rem 0.9rem;
-      font-size: 0.88rem;
-    }
-
-    footer {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: #94a3b8;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 780px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        display: none;
-      }
-    }
-  </style>
+  <title>CV Lập trình viên</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -236,8 +21,8 @@
     <section class="hero">
       <div class="hero-text">
         <p>Xin chào, tôi là</p>
-        <h1>Thien Tran</h1>
-        <p>Tôi là một lập trình viên đam mê xây dựng sản phẩm web hiện đại, trải nghiệm người dùng mượt mà và giải pháp hiệu quả. Tôi thích học hỏi công nghệ mới và phối hợp cùng đội nhóm để hoàn thiện sản phẩm có giá trị.</p>
+        <h1>Tran Tran Hoang Thien</h1>
+        <p>Tôi là một sinh viên đam mê xây dựng tường lửa, trải nghiệm người dùng mượt mà và giải pháp hiệu quả. Tôi thích học hỏi công nghệ mới và phối hợp cùng đội nhóm để hoàn thiện sản phẩm có giá trị.</p>
         <div class="buttons">
           <a class="button" href="#contact">Gặp tôi</a>
           <a class="button-secondary" href="#projects">Xem dự án</a>
@@ -246,19 +31,19 @@
 
       <div class="hero-card">
         <h2>Thông tin nhanh</h2>
-        <p><strong>Vị trí:</strong> Fullstack Developer</p>
-        <p><strong>Chuyên môn:</strong> Web app, React/Vue, Node.js, API, UI/UX</p>
+        <p><strong>Vị trí:</strong> Cybersecurity Network Engineer</p>
+        <p><strong>Chuyên môn:</strong> Blue Team</p>
         <div class="stat-grid">
           <div class="stat">
-            <strong>5+</strong>
+            <strong>1+</strong>
             Năm kinh nghiệm
           </div>
           <div class="stat">
-            <strong>15+</strong>
+            <strong>1+</strong>
             Dự án hoàn thành
           </div>
           <div class="stat">
-            <strong>10+</strong>
+            <strong>1+</strong>
             Công nghệ thành thạo
           </div>
           <div class="stat">
@@ -272,7 +57,7 @@
     <section id="about" class="section">
       <h2>Giới thiệu</h2>
       <div class="card">
-        <p>Tôi là một lập trình viên web với nền tảng vững chắc về frontend và backend. Tôi thích giải quyết các bài toán phát triển phần mềm bằng cách tạo ra các giao diện trực quan, tối ưu hiệu năng và đảm bảo mã nguồn dễ bảo trì. Tôi luôn tìm kiếm cơ hội để học hỏi, cải tiến và đóng góp vào các sản phẩm mang lại trải nghiệm tốt cho người dùng.</p>
+        <p>Tôi là một sinh viên đam mê xây dựng tường lửa, trải nghiệm người dùng mượt mà và giải pháp hiệu quả. Tôi thích học hỏi công nghệ mới và phối hợp cùng đội nhóm để hoàn thiện sản phẩm có giá trị.</p>
       </div>
     </section>
 
